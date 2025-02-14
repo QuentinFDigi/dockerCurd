@@ -2,8 +2,8 @@ FROM openjdk:21
 
 WORKDIR /usr/src/app
 
-COPY target/security-0.0.1-SNAPSHOT.jar .
-
-RUN java -jar ./security-0.0.1-SNAPSHOT.jar
+COPY target/security-0.0.1-SNAPSHOT.jar app.jar
 
 EXPOSE 8080
+
+CMD ["java", "-jar", "app.jar"]

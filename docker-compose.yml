@@ -5,11 +5,12 @@ services:
     ports:
       - "8080:8080"
     volumes:
-      - TODO
+      - ./.env:/usr/src/app/.env
     environment:
-      - SPRING_CONFIG_LOCATION=file:/app/config/application.properties
+      SPRING_CONFIG_LOCATION: file:/usr/src/app/application.properties
+      SPRING_DATASOURCE_URL: jdbc:mysql://dbusercurd:3306/${DB_NAME}
     env_file:
-      - .env
+      - ./.env
     depends_on:
       dbusercurd:
         condition: service_healthy
@@ -28,7 +29,7 @@ services:
     volumes:
       - dbusercurd-data:/var/lib/mysql
     ports:
-      - '3306:3306'
+      - '3307:3306'
     healthcheck:
       test: [ "CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-prootpassword" ]
       interval: 5s
