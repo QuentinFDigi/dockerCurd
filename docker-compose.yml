@@ -3,7 +3,7 @@ services:
     build: .
     container_name: usercurd
     ports:
-      - "8080:8080"
+      - '8080:8080'
     volumes:
       - ./src/main/resources/application.properties:/usr/src/app/application.properties
       - ./.env:/usr/src/app/.env
