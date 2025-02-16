@@ -5,6 +5,7 @@ services:
     ports:
       - "8080:8080"
     volumes:
+      - ./src/main/resources/application.properties:/usr/src/app/application.properties
       - ./.env:/usr/src/app/.env
     environment:
       SPRING_CONFIG_LOCATION: file:/usr/src/app/application.properties

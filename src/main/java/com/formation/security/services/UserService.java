@@ -13,8 +13,6 @@ import com.formation.security.entities.User;
 import com.formation.security.repositories.RoleRepository;
 import com.formation.security.repositories.UserRepository;
 
-import javax.swing.text.html.Option;
-
 @Service
 public class UserService {
     
